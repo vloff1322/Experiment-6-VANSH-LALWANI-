@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <!-- Picks the framework that matches the installed SDK (8 / 9 / 10), so no framework mismatch -->
+    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework Condition="$([MSBuild]::VersionGreaterThanOrEquals('$(MSBuildVersion)', '17.12.0'))">net9.0</TargetFramework>
+    <TargetFramework Condition="$([MSBuild]::VersionGreaterThanOrEquals('$(MSBuildVersion)', '18.0.0'))">net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>ModernProductCatalogApp</RootNamespace>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+
+</Project>
